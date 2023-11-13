@@ -1,6 +1,7 @@
 package com.openclassrooms.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ public class EmployeeController {
     * Read - Get all employees
     * @return - An Iterable object of Employee full filled
     */
-    @GetMapping("/employees")
+    @GetMapping(value = "/employees", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Employee> getEmployees() {
         return employeeService.getEmployees();
     }
